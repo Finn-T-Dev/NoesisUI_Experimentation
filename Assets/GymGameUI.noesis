@@ -1,0 +1,5 @@
+<Project>
+  <Assembly>GAME</Assembly>
+  <DefaultDataNamespace>GAME</DefaultDataNamespace>
+  <StartupDocument>MainPage.xaml</StartupDocument>
+</Project>

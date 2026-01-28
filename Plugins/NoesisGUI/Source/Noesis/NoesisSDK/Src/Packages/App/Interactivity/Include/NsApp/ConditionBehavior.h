@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// NoesisGUI - http://www.noesisengine.com
+// Copyright (c) 2013 Noesis Technologies S.L. All Rights Reserved.
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#ifndef __APP_CONDITIONBEHAVIOR_H__
+#define __APP_CONDITIONBEHAVIOR_H__
+
+
+#include <NsGui/ConditionBehavior.h>
+
+
+namespace NoesisApp
+{
+
+using Noesis::ConditionBehavior;
+
+}
+
+
+#endif

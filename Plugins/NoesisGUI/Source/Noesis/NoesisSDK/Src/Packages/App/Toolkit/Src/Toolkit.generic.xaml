@@ -1,0 +1,159 @@
+<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:noesis="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions">
+
+  <Style TargetType="noesis:RadialGauge">
+    <Setter Property="NeedleBrush" Value="Coral"/>
+    <Setter Property="TrailBrush" Value="Firebrick"/>
+    <Setter Property="ScaleBrush" Value="IndianRed"/>
+    <Setter Property="TickBrush" Value="LightSlateGray"/>
+    <Setter Property="Minimum" Value="0"/>
+    <Setter Property="Maximum" Value="100"/>
+    <Setter Property="ScaleWidth" Value="8"/>
+    <Setter Property="ScalePadding" Value="10"/>
+    <Setter Property="TickLength" Value="6"/>
+    <Setter Property="TickWidth" Value="1"/>
+    <Setter Property="TickSpacing" Value="10"/>
+    <Setter Property="TickPadding" Value="0"/>
+    <Setter Property="NeedleWidth" Value="2"/>
+    <Setter Property="NeedleLength" Value="60"/>
+    <Setter Property="MinAngle" Value="-120"/>
+    <Setter Property="MaxAngle" Value="120"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="noesis:RadialGauge">
+          <Grid>
+            <Viewbox>
+              <Grid Width="200" Height="200">
+                <noesis:RadialBorder
+                    MinAngle="{TemplateBinding MinAngle}" MaxAngle="{TemplateBinding MaxAngle}"
+                    Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                    Start="{TemplateBinding Minimum}"
+                    End="{TemplateBinding Maximum}"
+                    BorderWidth="{TemplateBinding ScaleWidth}"
+                    Padding="{TemplateBinding ScalePadding}"
+                    Brush="{TemplateBinding ScaleBrush}"/>
+                <noesis:RadialBorder
+                    MinAngle="{TemplateBinding MinAngle}" MaxAngle="{TemplateBinding MaxAngle}"
+                    Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                    Start="{TemplateBinding Minimum}"
+                    End="{TemplateBinding Value}"
+                    BorderWidth="{TemplateBinding ScaleWidth}"
+                    Padding="{TemplateBinding ScalePadding}"
+                    Brush="{TemplateBinding TrailBrush}"/>
+                <noesis:RadialTicks
+                    MinAngle="{TemplateBinding MinAngle}" MaxAngle="{TemplateBinding MaxAngle}"
+                    Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}" 
+                    Brush="{TemplateBinding TickBrush}"
+                    Spacing="{TemplateBinding TickSpacing}"
+                    Padding="{TemplateBinding TickPadding}"
+                    TickWidth="{TemplateBinding TickWidth}"
+                    TickLength="{TemplateBinding TickLength}"/>
+                <noesis:RadialNeedle
+                  MinAngle="{TemplateBinding MinAngle}" MaxAngle="{TemplateBinding MaxAngle}"
+                  Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                  Value="{TemplateBinding Value}">
+                  <Rectangle
+                      Fill="{TemplateBinding NeedleBrush}"
+                      Width="{TemplateBinding NeedleWidth}"
+                      Height="{TemplateBinding NeedleLength}"
+                      VerticalAlignment="Top"/>
+                </noesis:RadialNeedle>
+              </Grid>
+            </Viewbox>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="noesis:NineSliceImage">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="noesis:NineSliceImage">
+          <Grid>
+            <Grid SnapsToDevicePixels="True" noesis:Element.PPAAMode="Disabled">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="{Binding Slices.Top, RelativeSource={RelativeSource TemplatedParent}}"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="{Binding Slices.Bottom, RelativeSource={RelativeSource TemplatedParent}}"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{Binding Slices.Left, RelativeSource={RelativeSource TemplatedParent}}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="{Binding Slices.Right, RelativeSource={RelativeSource TemplatedParent}}"/>
+              </Grid.ColumnDefinitions>
+              <Rectangle Grid.Row="0" Grid.Column="0" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Rectangle.Fill>
+                  <ImageBrush ImageSource="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}}"
+                              Viewbox="{Binding TopLeftViewbox, RelativeSource={RelativeSource TemplatedParent}}"
+                              ViewboxUnits="Absolute"/>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Grid.Row="0" Grid.Column="1" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Rectangle.Fill>
+                  <ImageBrush ImageSource="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}}"
+                              Viewbox="{Binding TopCenterViewbox, RelativeSource={RelativeSource TemplatedParent}}"
+                              ViewboxUnits="Absolute"/>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Grid.Row="0" Grid.Column="2" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Rectangle.Fill>
+                  <ImageBrush ImageSource="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}}"
+                              Viewbox="{Binding TopRightViewbox, RelativeSource={RelativeSource TemplatedParent}}"
+                              ViewboxUnits="Absolute"/>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Grid.Row="1" Grid.Column="0" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Rectangle.Fill>
+                  <ImageBrush ImageSource="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}}"
+                              Viewbox="{Binding CenterLeftViewbox, RelativeSource={RelativeSource TemplatedParent}}"
+                              ViewboxUnits="Absolute"/>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Grid.Row="1" Grid.Column="1" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Rectangle.Fill>
+                  <ImageBrush ImageSource="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}}"
+                              Viewbox="{Binding CenterViewbox, RelativeSource={RelativeSource TemplatedParent}}"
+                              ViewboxUnits="Absolute"/>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Grid.Row="1" Grid.Column="2" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Rectangle.Fill>
+                  <ImageBrush ImageSource="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}}"
+                              Viewbox="{Binding CenterRightViewbox, RelativeSource={RelativeSource TemplatedParent}}"
+                              ViewboxUnits="Absolute"/>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Grid.Row="2" Grid.Column="0" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Rectangle.Fill>
+                  <ImageBrush ImageSource="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}}"
+                              Viewbox="{Binding BottomLeftViewbox, RelativeSource={RelativeSource TemplatedParent}}"
+                              ViewboxUnits="Absolute"/>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Grid.Row="2" Grid.Column="1" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Rectangle.Fill>
+                  <ImageBrush ImageSource="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}}"
+                              Viewbox="{Binding BottomCenterViewbox, RelativeSource={RelativeSource TemplatedParent}}"
+                              ViewboxUnits="Absolute"/>
+                </Rectangle.Fill>
+              </Rectangle>
+              <Rectangle Grid.Row="2" Grid.Column="2" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                <Rectangle.Fill>
+                  <ImageBrush ImageSource="{Binding ImageSource, RelativeSource={RelativeSource TemplatedParent}}"
+                              Viewbox="{Binding BottomRightViewbox, RelativeSource={RelativeSource TemplatedParent}}"
+                              ViewboxUnits="Absolute"/>
+                </Rectangle.Fill>
+              </Rectangle>
+            </Grid>
+            <ContentPresenter Margin="{TemplateBinding Padding}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

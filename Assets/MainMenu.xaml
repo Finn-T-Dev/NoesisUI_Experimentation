@@ -1,0 +1,56 @@
+<Page
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+  d:DesignWidth="1920"
+  d:DesignHeight="1080"
+  Background="#FF4D5052">
+  
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="GlobalResources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Page.Resources>
+  
+  <Grid x:Name="Master">
+    <Grid x:Name="Background">
+      <Grid.Background>
+        <ImageBrush ImageSource="Assets/scifi_main_menu.jpg" Stretch="UniformToFill"/>
+      </Grid.Background>
+      <Grid x:Name="HeaderBar" Background="#FF000000" Height="32" VerticalAlignment="Top"/>
+      <Grid x:Name="FooterBar" Height="32" Background="#FF000000" VerticalAlignment="Bottom"/>
+    </Grid>
+    <Grid x:Name="Interface">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="64"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="51*"/>
+        <RowDefinition Height="838*"/>
+        <RowDefinition Height="64"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="64"/>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="64"/>
+      </Grid.ColumnDefinitions>
+      <Grid x:Name="TitleArea" Grid.Row="1" Grid.Column="2" Margin="0">
+        <TextBlock x:Name="TitleText" Text="Generic Shooter Template" TextWrapping="Wrap" HorizontalAlignment="Center" FontFamily="Broadway" FontSize="56"/>
+      </Grid>
+      <Grid x:Name="SubtitleArea" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="0,12,0,12">
+        <TextBlock x:Name="SubtitleText" Text="You&apos;ve seen it all before" TextWrapping="Wrap" FontSize="24"/>
+      </Grid>
+      <StackPanel x:Name="MenuStack" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" Margin="0,100,0,0">
+        <Button x:Name="StartButton" Content="START" Command="{Binding StartCommand}" Style="{StaticResource SciFiButtonStyle}"/>
+        <Button x:Name="CodexButton" Content="CODEX" Command="{Binding CodexCommand}" Style="{StaticResource SciFiButtonStyle}"/>
+        <Button x:Name="SettingsButton" Content="SETTINGS" Command="{Binding SettingsCommand}" Style="{StaticResource SciFiButtonStyle}"/>
+        <Button x:Name="ExitButton" Content="EXIT" Command="{Binding ExitCommand}" Style="{StaticResource SciFiButtonStyle}"/>
+      </StackPanel>
+    </Grid>
+  </Grid>
+</Page>

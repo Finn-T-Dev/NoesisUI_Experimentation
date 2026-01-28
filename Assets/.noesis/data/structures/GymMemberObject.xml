@@ -1,0 +1,7 @@
+<Class Name="GymMemberObject">
+  <Property Name="Name" Type="String" StringMinWordCount="0" StringMaxWordCount="10"/>
+  <Property Name="Age" Type="Number" NumberMinValue="0" NumberMaxValue="100" NumberDecimalCount="0"/>
+  <Property Name="Height" Type="Number" NumberMinValue="0" NumberMaxValue="100" NumberDecimalCount="0"/>
+  <Property Name="Details" Type="String" StringMinWordCount="0" StringMaxWordCount="10"/>
+  <Property Name="Image" Type="Object" SubType="ImageSource" ImageSourcePath=""/>
+</Class>

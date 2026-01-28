@@ -1,0 +1,22 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// NoesisGUI - http://www.noesisengine.com
+// Copyright (c) 2013 Noesis Technologies S.L. All Rights Reserved.
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#ifndef __APP_BEHAVIOR_H__
+#define __APP_BEHAVIOR_H__
+
+
+#include <NsGui/Behavior.h>
+
+
+namespace NoesisApp
+{
+
+using Noesis::Behavior;
+using Noesis::BehaviorT;
+
+}
+
+#endif

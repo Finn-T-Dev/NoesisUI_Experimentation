@@ -1,0 +1,7 @@
+<Class Name="HUDData">
+  <Property Name="Health" Type="Number" NumberMinValue="0" NumberMaxValue="100" NumberDecimalCount="0"/>
+  <Property Name="CurrentAmmo" Type="Number" NumberMinValue="0" NumberMaxValue="100" NumberDecimalCount="0"/>
+  <Property Name="MaxAmmo" Type="Number" NumberMinValue="0" NumberMaxValue="100" NumberDecimalCount="0"/>
+  <Property Name="CompassHeading" Type="String" StringMinWordCount="0" StringMaxWordCount="10"/>
+  <Property Name="Kills" Type="Number" NumberMinValue="0" NumberMaxValue="100" NumberDecimalCount="0"/>
+</Class>

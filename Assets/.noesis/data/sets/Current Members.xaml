@@ -1,0 +1,12 @@
+<vdctx:GymMemberObjects xmlns:vdctx="clr-namespace:GAME" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+  <vdctx:GymMemberObjects.GymMemberObjects>
+    <vdctx:GymMemberObject Name="Et dolore magna aliqua. Sed id semper" Age="92" Height="0" Image="studio:///GAME;component/Assets/scifi_main_menu.jpg"/>
+    <vdctx:GymMemberObject Name="Volutpat maecenas volutpat blandit. Consectetur adipiscing" Age="65" Height="97" Details="Lorem. Faucibus scelerisque"/>
+    <vdctx:GymMemberObject Name="Pretium vulputate sapien nec sagittis. Lorem ipsum" Age="11" Height="86" Details="Urna neque viverra justo. Odio"/>
+    <vdctx:GymMemberObject Name="Eiusmod tempor incididunt ut" Age="96" Height="75"/>
+    <vdctx:GymMemberObject Name="Porttitor massa. Sit amet venenatis urna cursus. Sagittis nisl rhoncus" Age="44" Height="30" Details="Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis"/>
+    <vdctx:GymMemberObject Age="5" Height="8" Details="Maecenas volutpat blandit. Consectetur adipiscing elit"/>
+    <vdctx:GymMemberObject Name="Est lorem. Faucibus scelerisque" Age="66" Height="42" Details="Tincidunt. Quis"/>
+    <vdctx:GymMemberObject Name="Elit ut aliquam" Age="24" Height="64" Details="Urna cursus. Sagittis nisl rhoncus mattis rhoncus urna"/>
+  </vdctx:GymMemberObjects.GymMemberObjects>
+</vdctx:GymMemberObjects>

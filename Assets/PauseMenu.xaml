@@ -1,0 +1,105 @@
+<Page
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  d:DesignHeight="1080"
+  d:DesignWidth="1920"
+  Background="Transparent"
+  mc:Ignorable="d">
+  <Grid x:Name="Master">
+    <Grid x:Name="Background" Opacity="0.515">
+      <Grid.Background>
+        <ImageBrush ImageSource="Assets/scifi_main_menu.jpg" />
+      </Grid.Background>
+    </Grid>
+
+    <!--  Health - Bottom Left  -->
+<StackPanel
+  Margin="20"
+  HorizontalAlignment="Left"
+  VerticalAlignment="Bottom">
+  <TextBlock 
+    Text="HEALTH" 
+    FontSize="14" 
+    Foreground="White" 
+    Opacity="0.7"
+    Margin="0,0,0,5"/>
+  <TextBlock 
+    Text="{Binding Health}" 
+    FontSize="48" 
+    Foreground="#FF00FF00" 
+    FontWeight="Bold"/>
+</StackPanel>
+
+<StackPanel
+  Margin="20"
+  HorizontalAlignment="Right"
+  VerticalAlignment="Bottom">
+  <TextBlock 
+    Text="AMMO" 
+    FontSize="14" 
+    Foreground="White" 
+    Opacity="0.7"
+    Margin="0,0,0,5"
+    TextAlignment="Right"/>
+  <StackPanel Orientation="Horizontal">
+    <TextBlock 
+      Text="{Binding CurrentAmmo}" 
+      FontSize="48" 
+      Foreground="White" 
+      FontWeight="Bold"/>
+    <TextBlock 
+      Text=" / " 
+      FontSize="32" 
+      Foreground="Gray" 
+      VerticalAlignment="Bottom"
+      Margin="5,0"/>
+    <TextBlock 
+      Text="{Binding MaxAmmo}" 
+      FontSize="32" 
+      Foreground="Gray" 
+      VerticalAlignment="Bottom"/>
+  </StackPanel>
+</StackPanel>
+
+<StackPanel
+  Margin="20"
+  HorizontalAlignment="Center"
+  VerticalAlignment="Top"
+  Orientation="Horizontal">
+  <TextBlock 
+    Text="N" 
+    FontSize="24" 
+    Foreground="White" 
+    Margin="10,0"/>
+  <TextBlock 
+    Text="{Binding CompassHeading}" 
+    FontSize="20" 
+    Foreground="Gray" 
+    Margin="10,0"
+    VerticalAlignment="Center"/>
+</StackPanel>
+
+<StackPanel 
+  Margin="20"
+  HorizontalAlignment="Right"
+  VerticalAlignment="Top">
+  <TextBlock 
+    Text="KILLS" 
+    FontSize="14" 
+    Foreground="White" 
+    Opacity="0.7"
+    Margin="0,0,0,5"
+    TextAlignment="Right"/>
+  <TextBlock 
+    Text="{Binding Kills}" 
+    FontSize="36" 
+    Foreground="#FFFFFF00" 
+    FontWeight="Bold"
+    TextAlignment="Right"/>
+</StackPanel>
+
+
+  </Grid>
+</Page>
