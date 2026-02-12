@@ -1,0 +1,221 @@
+<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:noesis="clr-namespace:NoesisGUIExtensions">
+
+  <ControlTemplate x:Key="SciFiButtonTemplate" TargetType="Button">
+    <Border
+      x:Name="BackgroundBorder"
+      Padding="{TemplateBinding Padding}"
+      Background="#FF646464"
+      BorderBrush="#FFFFFFFF"
+      BorderThickness="1"
+      CornerRadius="4"
+
+      >
+
+      <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+    </Border>
+
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter TargetName="BackgroundBorder" Property="Background" Value="#FF2A5CB0" />
+        <Setter TargetName="BackgroundBorder" Property="BorderBrush" Value="#FF33EEFF" />
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter TargetName="BackgroundBorder" Property="Background" Value="#FF0F2050" />
+        <Setter TargetName="BackgroundBorder" Property="BorderBrush" Value="#FF00AACC" />
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="False">
+        <Setter TargetName="BackgroundBorder" Property="Background" Value="#FF333333" />
+        <Setter TargetName="BackgroundBorder" Property="BorderBrush" Value="#FF666666" />
+        <Setter TargetName="BackgroundBorder" Property="Opacity" Value="0.5" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+  <Style x:Key="SciFiButtonStyle" TargetType="Button">
+    <Setter Property="Template" Value="{StaticResource SciFiButtonTemplate}" />
+    <Setter Property="Foreground" Value="White" />
+    <Setter Property="FontSize" Value="16" />
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="Padding" Value="20,10" />
+    <Setter Property="Margin" Value="0,0,0,10" />
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Height" Value="40"/>
+    <Setter Property="Width" Value="400"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+  </Style>
+
+  <ControlTemplate x:Key="GymMembersListTemplate" TargetType="ListBox">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+      <ItemsPresenter />
+    </ScrollViewer>
+  </ControlTemplate>
+
+  <ItemsPanelTemplate x:Key="GymMembersListPanel">
+    <StackPanel Orientation="Vertical" />
+  </ItemsPanelTemplate>
+
+  <ControlTemplate x:Key="GymMemberContainerTemplate" TargetType="{x:Type ListBoxItem}">
+    <Grid>
+      <Ellipse
+        Margin="4"
+        Fill="SkyBlue"
+        Opacity="0" />
+      <Ellipse
+        x:Name="selectedMember"
+        Margin="-10"
+        IsHitTestVisible="False" />
+      <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+    </Grid>
+    <ControlTemplate.Triggers>
+      <Trigger Property="IsSelected" Value="true">
+        <Setter TargetName="selectedMember" Property="Stroke" Value="#FF00DFFF" />
+      </Trigger>
+    </ControlTemplate.Triggers>
+  </ControlTemplate>
+
+  <Style
+    x:Key="GymMemberContainerStyle"
+    BasedOn="{StaticResource {x:Type ListBoxItem}}"
+    TargetType="{x:Type ListBoxItem}">
+    <Setter Property="Template" Value="{StaticResource GymMemberContainerTemplate}" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+  </Style>
+
+  <Style x:Key="HeadingStyle" TargetType="TextBlock">
+<Setter Property="FontSize" Value="56"/>
+<Setter Property="FontFamily" Value="Broadway"/>
+<Setter Property="Text" Value="Generic Shooter Template"/>
+<Setter Property="TextWrapping" Value="Wrap"/>
+<Setter Property="Name" Value="TitleText"/>
+<Setter Property="HorizontalAlignment" Value="Center"/>
+</Style>
+
+<Style x:Key="InterfaceLayout" TargetType="Grid"/>
+<ControlTemplate x:Key="Button_Template_Cyber" TargetType="Button">
+<ControlTemplate.Triggers>
+<Trigger Value="True" Property="IsMouseOver">
+<Setter TargetName="Master_Grid" Property="Background" Value="#FF778899"/>
+</Trigger>
+<Trigger Value="True" Property="IsPressed">
+<Setter TargetName="Master_Grid" Property="Background" Value="#FF708090"/>
+</Trigger>
+</ControlTemplate.Triggers>
+
+<Grid x:Name="Master_Grid" Width="400" Height="240" Margin="32,32,32,32">
+<Grid.Effect>
+<DropShadowEffect Color="{Binding Path=Foreground.Color, RelativeSource={RelativeSource TemplatedParent}}" Opacity="0.748" BlurRadius="24" Direction="0"/>
+</Grid.Effect>
+<Grid x:Name="Background_Grid">
+<Border x:Name="Image_Border" BorderThickness="1" CornerRadius="8,8,0,0">
+<Border.Background>
+<ImageBrush ImageSource="Assets/cracks 10 - 512x512.png" Stretch="UniformToFill"/>
+</Border.Background>
+</Border>
+<Border x:Name="ImageTint_Border" BorderThickness="1" Background="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}" Opacity="0.7" CornerRadius="8,8,0,0">
+<Border x:Name="ImageGradient_Border" BorderThickness="1" CornerRadius="8,8,0,0" Margin="-1"><Border.Background>
+<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+<GradientStop Color="#00000000" Offset="0"/>
+<GradientStop Color="#FF000000" Offset="1"/>
+</LinearGradientBrush>
+</Border.Background>
+
+</Border>
+</Border>
+</Grid>
+<Border x:Name="Content_Border" BorderThickness="2,2,2,16" BorderBrush="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="8,8,0,0">
+<Grid x:Name="Content_Grid">
+<TextBlock x:Name="Label_TextBlock" TextWrapping="Wrap" HorizontalAlignment="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}" Margin="16,0,16,8" FontFamily="Cascadia Code" FontSize="50">
+<TextBlock.Effect>
+<DropShadowEffect Color="{Binding Path=Foreground.Color, RelativeSource={RelativeSource TemplatedParent}}" ShadowDepth="0" Direction="0" BlurRadius="24"/>
+</TextBlock.Effect>
+<TextBlock.Text>
+<Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}">
+<Binding.Converter>
+<noesis:CaseConverter Format="LowerCase"/>
+</Binding.Converter>
+</Binding>
+</TextBlock.Text>
+</TextBlock>
+</Grid>
+</Border>
+</Grid>
+</ControlTemplate>
+<Style x:Key="Button_Style_Banana" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+<Setter Property="HorizontalAlignment" Value="Left"/>
+<Setter Property="VerticalAlignment" Value="Stretch"/>
+<Setter Property="Margin" Value="0"/>
+<Setter Property="Foreground">
+<Setter.Value>
+<SolidColorBrush Color="#FFEBAB00"/>
+</Setter.Value>
+</Setter>
+<Setter Property="Background">
+<Setter.Value>
+<SolidColorBrush Color="#FF70A503"/>
+</Setter.Value>
+</Setter>
+<Setter Property="BorderThickness" Value="16,0,0,0"/>
+</Style>
+<Style x:Key="Button_Style_Apple" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+<Setter Property="Foreground">
+<Setter.Value>
+<SolidColorBrush Color="#FF8F1C1A"/>
+</Setter.Value>
+</Setter>
+<Setter Property="Background">
+<Setter.Value>
+<SolidColorBrush Color="#FF88AD9B"/>
+</Setter.Value>
+</Setter>
+</Style>
+<ControlTemplate x:Key="Button_Template_Jungle" TargetType="Button">
+<Border x:Name="Master_Border" Width="400" Margin="32,32,32,32" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}" BorderThickness="{Binding Path=BorderThickness, RelativeSource={RelativeSource TemplatedParent}}">
+<Border.Effect>
+<DropShadowEffect BlurRadius="0" ShadowDepth="8" Direction="220"/>
+</Border.Effect>
+<Border.LayoutTransform>
+<TransformGroup>
+<ScaleTransform/>
+<SkewTransform AngleX="-16"/>
+<RotateTransform/>
+<TranslateTransform/>
+</TransformGroup>
+</Border.LayoutTransform>
+<Grid x:Name="Content_Grid">
+<Border x:Name="BackgroundColour_Border" Margin="0,2,0,-2" Background="{Binding Path=Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+<Border x:Name="BackgroundPattern_Border">
+<Border.Background>
+<ImageBrush ImageSource="Assets/swirl 9 - 512x512.png" Stretch="UniformToFill"/>
+</Border.Background>
+</Border>
+<Border x:Name="Label_Border" HorizontalAlignment="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" Margin="24,24,24,24" Background="#FF000000">
+<TextBlock x:Name="Label_TextBlock" TextWrapping="Wrap" Foreground="{Binding Path=Foreground, RelativeSource={RelativeSource TemplatedParent}}" Padding="5,-3,5,-3" FontFamily="Berlin Sans FB" FontSize="48" FontWeight="DemiBold">
+<TextBlock.Text>
+<Binding Path="Content" RelativeSource="{RelativeSource TemplatedParent}">
+<Binding.Converter>
+<noesis:CaseConverter/>
+</Binding.Converter>
+</Binding>
+</TextBlock.Text>
+</TextBlock>
+</Border>
+</Grid>
+</Border>
+<ControlTemplate.Triggers>
+<Trigger Value="True" Property="IsMouseOver">
+<Setter TargetName="Master_Border" Property="Background" Value="#FF778899"/>
+</Trigger>
+<Trigger Value="True" Property="IsPressed">
+<Setter TargetName="Master_Border" Property="Background" Value="#FF708090"/>
+</Trigger>
+</ControlTemplate.Triggers>
+
+</ControlTemplate>
+
+  
+</ResourceDictionary>

@@ -1,0 +1,8 @@
+<vdctx:EnemyObjects xmlns:vdctx="clr-namespace:GAME" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+  <vdctx:EnemyObjects.EnemyObjects>
+    <vdctx:EnemyObject X="63" Y="-1"/>
+    <vdctx:EnemyObject X="69" Y="-14"/>
+    <vdctx:EnemyObject X="81" Y="-33"/>
+    <vdctx:EnemyObject X="34" Y="71"/>
+  </vdctx:EnemyObjects.EnemyObjects>
+</vdctx:EnemyObjects>

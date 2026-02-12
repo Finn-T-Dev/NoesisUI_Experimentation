@@ -3,105 +3,151 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:system="clr-namespace:System;assembly=mscorlib"
+  d:DataContext="HUDData Data 01"
   d:DesignHeight="1080"
   d:DesignWidth="1920"
   Background="Transparent"
-  mc:Ignorable="d" d:DataContext="HUDData Data 01">
+  mc:Ignorable="d">
+
+  <Page.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="MinimapResources.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Page.Resources>
+
   <Grid x:Name="Master">
+    <StackPanel
+      HorizontalAlignment="Left"
+      VerticalAlignment="Top"
+      Background="Black">
+      <TextBlock
+        FontSize="24"
+        Foreground="White"
+        Text="{Binding EnemyLocations.Count}" />
+      <TextBlock
+        FontSize="24"
+        Foreground="Yellow"
+        Text="{Binding EnemyLocations[0].X}" />
+      <TextBlock
+        FontSize="24"
+        Foreground="Yellow"
+        Text="{Binding EnemyLocations[0].Y}" />
+    </StackPanel>
+
     <!--
     <Grid x:Name="Background" Opacity="0.515">
       <Grid.Background>
         <ImageBrush ImageSource="Assets/scifi_main_menu.jpg" />
       </Grid.Background>
     </Grid>
-  -->
+    -->
 
     <!--  Health - Bottom Left  -->
-<StackPanel x:Name="HealthStackPanel"
-  Margin="20"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Bottom">
-  <TextBlock 
-    Text="HEALTH" 
-    FontSize="14" 
-    Foreground="White" 
-    Opacity="0.7"
-    Margin="0,0,0,5"/>
-  <TextBlock 
-    Text="{Binding Health}" 
-    FontSize="48" 
-    Foreground="#FF00FF00" 
-    FontWeight="Bold"/>
-</StackPanel>
+    <StackPanel
+      x:Name="HealthStackPanel"
+      Width="200"
+      Margin="20"
+      HorizontalAlignment="Left"
+      VerticalAlignment="Bottom">
+      <TextBlock
+        Margin="0,0,0,5"
+        FontSize="14"
+        Foreground="White"
+        Opacity="0.7"
+        Text="HEALTH" />
+      <ProgressBar Foreground="#FF00FF60" Value="{Binding Path=Health}" />
+      <TextBlock
+        FontSize="48"
+        FontWeight="Bold"
+        Foreground="#FF00FF00"
+        Text="{Binding Health}" />
+    </StackPanel>
 
-<StackPanel x:Name="AmmoStackPanel"
-  Margin="20"
-  HorizontalAlignment="Right"
-  VerticalAlignment="Bottom">
-  <TextBlock 
-    Text="AMMO" 
-    FontSize="14" 
-    Foreground="White" 
-    Opacity="0.7"
-    Margin="0,0,0,5"
-    TextAlignment="Right"/>
-  <StackPanel Orientation="Horizontal">
-    <TextBlock 
-      Text="{Binding CurrentAmmo}" 
-      FontSize="48" 
-      Foreground="White" 
-      FontWeight="Bold"/>
-    <TextBlock 
-      Text=" / " 
-      FontSize="32" 
-      Foreground="Gray" 
-      VerticalAlignment="Bottom"
-      Margin="5,0"/>
-    <TextBlock 
-      Text="{Binding MaxAmmo}" 
-      FontSize="32" 
-      Foreground="Gray" 
-      VerticalAlignment="Bottom"/>
-  </StackPanel>
-</StackPanel>
+    <StackPanel
+      x:Name="AmmoStackPanel"
+      Margin="20"
+      HorizontalAlignment="Right"
+      VerticalAlignment="Bottom">
+      <Image x:Name="EquippedWeaponImage" Height="100" Source="{Binding Path=WeaponTexture}" Width="100"/>
+      <TextBlock
+        Margin="0,0,0,5"
+        FontSize="14"
+        Foreground="White"
+        Opacity="0.7"
+        Text="AMMO"
+        TextAlignment="Right" />
+      <StackPanel Orientation="Horizontal">
+        <TextBlock
+          FontSize="48"
+          FontWeight="Bold"
+          Foreground="White"
+          Text="{Binding CurrentAmmo}" />
+        <TextBlock
+          Margin="5,0"
+          VerticalAlignment="Bottom"
+          FontSize="48"
+          Foreground="Gray"
+          Text=" / " />
+        <TextBlock
+          VerticalAlignment="Bottom"
+          FontSize="48"
+          Foreground="Gray"
+          Text="{Binding MaxAmmo}" />
+      </StackPanel>
+    </StackPanel>
 
-<StackPanel
-  Margin="20"
-  HorizontalAlignment="Center"
-  VerticalAlignment="Top"
-  Orientation="Horizontal">
-  <TextBlock 
-    Text="N" 
-    FontSize="24" 
-    Foreground="White" 
-    Margin="10,0"/>
-  <TextBlock 
-    Text="{Binding CompassHeading}" 
-    FontSize="20" 
-    Foreground="Gray" 
-    Margin="10,0"
-    VerticalAlignment="Center"/>
-</StackPanel>
+    <StackPanel
+      x:Name="CompassStackPanel"
+      Margin="20"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Top"
+      Orientation="Horizontal">
+      <TextBlock
+        Margin="10,0"
+        VerticalAlignment="Center"
+        FontSize="48"
+        Foreground="Gray"
+        Text="{Binding CompassHeading}" />
+    </StackPanel>
 
-<StackPanel 
-  Margin="20"
-  HorizontalAlignment="Right"
-  VerticalAlignment="Top">
-  <TextBlock 
-    Text="KILLS" 
-    FontSize="14" 
-    Foreground="White" 
-    Opacity="0.7"
-    Margin="0,0,0,5"
-    TextAlignment="Right"/>
-  <TextBlock 
-    Text="{Binding Kills}" 
-    FontSize="36" 
-    Foreground="#FFFFFF00" 
-    FontWeight="Bold"
-    TextAlignment="Right"/>
-</StackPanel>
+    <Canvas
+      Width="200"
+      Height="200"
+      Margin="10,10,10,10"
+      HorizontalAlignment="Left"
+      VerticalAlignment="Center"
+      Background="Purple"
+      RenderTransformOrigin="0.0,1.0">
 
+      <!--  Enemy 0  -->
+      <Ellipse
+        Canvas.Left="{Binding EnemyLocations[0].X}"
+        Canvas.Top="{Binding EnemyLocations[0].Y}"
+        Width="10"
+        Height="10"
+        Fill="Red" />
+
+      <!--  Enemy 1  -->
+      <Ellipse
+        Canvas.Left="{Binding EnemyLocations[1].X}"
+        Canvas.Top="{Binding EnemyLocations[1].Y}"
+        Width="10"
+        Height="10"
+        Fill="Red" />
+
+    </Canvas>
+    <Grid x:Name="MinimapContainer" Width="256" Height="256" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,10,10,10">
+      <Grid.Background>
+        <SolidColorBrush Color="#FFFFFFFF" Opacity="0"/>
+      </Grid.Background>
+      <Image
+        x:Name="MinimapImage"
+        Source="{Binding MinimapTexture}"
+        Stretch="Fill" />
+    </Grid>
 
   </Grid>
 </Page>

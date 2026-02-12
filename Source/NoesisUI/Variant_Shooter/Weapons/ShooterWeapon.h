@@ -13,6 +13,7 @@ class AShooterProjectile;
 class USkeletalMeshComponent;
 class UAnimMontage;
 class UAnimInstance;
+class UTexture2D;
 
 /**
  *  Base class for a simple first person shooter weapon
@@ -32,6 +33,10 @@ class NOESISUI_API AShooterWeapon : public AActor
 	/** Third person perspective mesh */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* ThirdPersonMesh;
+
+	/** Image texture of weapon for HUD */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="UI", meta = (AllowPrivateAccess = "true"))
+	UTexture2D* WeaponImage;
 
 protected:
 

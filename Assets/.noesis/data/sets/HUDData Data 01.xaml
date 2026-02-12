@@ -1,1 +1,12 @@
-<vdctx:HUDData xmlns:vdctx="clr-namespace:GAME" Health="22" CurrentAmmo="24" MaxAmmo="83" Kills="93" xmlns:xml="http://www.w3.org/XML/1998/namespace"/>
+<vdctx:HUDData xmlns:vdctx="clr-namespace:GAME" Health="22" CurrentAmmo="24" MaxAmmo="83" Kills="93" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+  <vdctx:HUDData.EnemyLocations>
+    <vdctx:EnemyObject X="71" Y="-43"/>
+    <vdctx:EnemyObject X="-55" Y="53"/>
+    <vdctx:EnemyObject X="45" Y="68"/>
+    <vdctx:EnemyObject X="51" Y="76"/>
+    <vdctx:EnemyObject X="47" Y="-87"/>
+    <vdctx:EnemyObject X="51" Y="-16"/>
+    <vdctx:EnemyObject X="-11" Y="-70"/>
+    <vdctx:EnemyObject X="32" Y="23"/>
+  </vdctx:HUDData.EnemyLocations>
+</vdctx:HUDData>

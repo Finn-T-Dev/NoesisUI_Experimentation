@@ -11,7 +11,7 @@
   <Page.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="GlobalResources.xaml"/>
+        <ResourceDictionary Source="MenuStyles.xaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Page.Resources>
@@ -24,7 +24,7 @@
       <Grid x:Name="HeaderBar" Background="#FF000000" Height="32" VerticalAlignment="Top"/>
       <Grid x:Name="FooterBar" Height="32" Background="#FF000000" VerticalAlignment="Bottom"/>
     </Grid>
-    <Grid x:Name="Interface">
+    <Grid x:Name="Interface" Style="{DynamicResource InterfaceLayout}">
       <Grid.RowDefinitions>
         <RowDefinition Height="64"/>
         <RowDefinition Height="Auto"/>
@@ -40,16 +40,16 @@
         <ColumnDefinition Width="64"/>
       </Grid.ColumnDefinitions>
       <Grid x:Name="TitleArea" Grid.Row="1" Grid.Column="2" Margin="0">
-        <TextBlock x:Name="TitleText" Text="Generic Shooter Template" TextWrapping="Wrap" HorizontalAlignment="Center" FontFamily="Broadway" FontSize="56"/>
+        <TextBlock x:Name="TitleText" Style="{DynamicResource HeadingStyle}"/>
       </Grid>
       <Grid x:Name="SubtitleArea" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Margin="0,12,0,12">
         <TextBlock x:Name="SubtitleText" Text="You&apos;ve seen it all before" TextWrapping="Wrap" FontSize="24"/>
       </Grid>
-      <StackPanel x:Name="MenuStack" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" Margin="0,100,0,0">
-        <Button x:Name="StartButton" Content="START" Command="{Binding StartCommand}" Style="{StaticResource SciFiButtonStyle}"/>
-        <Button x:Name="CodexButton" Content="CODEX" Command="{Binding CodexCommand}" Style="{StaticResource SciFiButtonStyle}"/>
-        <Button x:Name="SettingsButton" Content="SETTINGS" Command="{Binding SettingsCommand}" Style="{StaticResource SciFiButtonStyle}"/>
-        <Button x:Name="ExitButton" Content="EXIT" Command="{Binding ExitCommand}" Style="{StaticResource SciFiButtonStyle}"/>
+      <StackPanel x:Name="MenuStack" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" Margin="0,50,0,0">
+        <Button x:Name="StartButton" Template="{DynamicResource Button_Template_Jungle}" Command="{Binding Path=StartCommand}" Content="Start Game" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="CodexButton" Template="{DynamicResource Button_Template_Jungle}" Command="{Binding Path=CodexCommand}" Content="Codex" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="SettingsButton" Template="{DynamicResource Button_Template_Jungle}" Command="{Binding Path=SettingsCommand}" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Settings"/>
+        <Button x:Name="SettingsButton001" Template="{DynamicResource Button_Template_Jungle}" Command="{Binding Path=ExitCommand}" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Exit"/>
       </StackPanel>
     </Grid>
   </Grid>

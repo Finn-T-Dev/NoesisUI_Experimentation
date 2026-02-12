@@ -12,7 +12,7 @@
   <Page.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="GlobalResources.xaml" />
+        <ResourceDictionary Source="MenuStyles.xaml" />
       </ResourceDictionary.MergedDictionaries>
       
       <DataTemplate x:Key="GymMemberObjectTemplate">

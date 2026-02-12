@@ -1,0 +1,4 @@
+<Class Name="EnemyObject">
+  <Property Name="X" Type="Number" NumberMinValue="-95" NumberMaxValue="95" NumberDecimalCount="0"/>
+  <Property Name="Y" Type="Number" NumberMinValue="-95" NumberMaxValue="95" NumberDecimalCount="0"/>
+</Class>

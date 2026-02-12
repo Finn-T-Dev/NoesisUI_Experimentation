@@ -13,92 +13,24 @@
         <ImageBrush ImageSource="Assets/scifi_main_menu.jpg" />
       </Grid.Background>
     </Grid>
+    <Grid x:Name="Interaction" Style="{DynamicResource InterfaceLayout}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="64"/>
+        <RowDefinition Height="80"/>
+        <RowDefinition Height="948*"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="2*"/>
+        <ColumnDefinition Width="1*"/>
+      </Grid.ColumnDefinitions>
+      <TextBlock Text="GAME PAUSED" TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource HeadingStyle}"/>
+    </Grid>
 
     <!--  Health - Bottom Left  -->
-<StackPanel
-  Margin="20"
-  HorizontalAlignment="Left"
-  VerticalAlignment="Bottom">
-  <TextBlock 
-    Text="HEALTH" 
-    FontSize="14" 
-    Foreground="White" 
-    Opacity="0.7"
-    Margin="0,0,0,5"/>
-  <TextBlock 
-    Text="{Binding Health}" 
-    FontSize="48" 
-    Foreground="#FF00FF00" 
-    FontWeight="Bold"/>
-</StackPanel>
 
-<StackPanel
-  Margin="20"
-  HorizontalAlignment="Right"
-  VerticalAlignment="Bottom">
-  <TextBlock 
-    Text="AMMO" 
-    FontSize="14" 
-    Foreground="White" 
-    Opacity="0.7"
-    Margin="0,0,0,5"
-    TextAlignment="Right"/>
-  <StackPanel Orientation="Horizontal">
-    <TextBlock 
-      Text="{Binding CurrentAmmo}" 
-      FontSize="48" 
-      Foreground="White" 
-      FontWeight="Bold"/>
-    <TextBlock 
-      Text=" / " 
-      FontSize="32" 
-      Foreground="Gray" 
-      VerticalAlignment="Bottom"
-      Margin="5,0"/>
-    <TextBlock 
-      Text="{Binding MaxAmmo}" 
-      FontSize="32" 
-      Foreground="Gray" 
-      VerticalAlignment="Bottom"/>
-  </StackPanel>
-</StackPanel>
 
-<StackPanel
-  Margin="20"
-  HorizontalAlignment="Center"
-  VerticalAlignment="Top"
-  Orientation="Horizontal">
-  <TextBlock 
-    Text="N" 
-    FontSize="24" 
-    Foreground="White" 
-    Margin="10,0"/>
-  <TextBlock 
-    Text="{Binding CompassHeading}" 
-    FontSize="20" 
-    Foreground="Gray" 
-    Margin="10,0"
-    VerticalAlignment="Center"/>
-</StackPanel>
 
-<StackPanel 
-  Margin="20"
-  HorizontalAlignment="Right"
-  VerticalAlignment="Top">
-  <TextBlock 
-    Text="KILLS" 
-    FontSize="14" 
-    Foreground="White" 
-    Opacity="0.7"
-    Margin="0,0,0,5"
-    TextAlignment="Right"/>
-  <TextBlock 
-    Text="{Binding Kills}" 
-    FontSize="36" 
-    Foreground="#FFFFFF00" 
-    FontWeight="Bold"
-    TextAlignment="Right"/>
-</StackPanel>
 
 
   </Grid>

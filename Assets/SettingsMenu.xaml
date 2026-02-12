@@ -14,7 +14,7 @@
   <Page.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="GlobalResources.xaml"/>
+        <ResourceDictionary Source="MenuStyles.xaml"/>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Page.Resources>
@@ -27,18 +27,18 @@
       <Grid x:Name="HeaderBar" Background="#FF000000" Height="32" VerticalAlignment="Top"/>
       <Grid x:Name="FooterBar" Height="32" Background="#FF000000" VerticalAlignment="Bottom"/>
     </Grid>
-    <Grid x:Name="Interface">
+    <Grid x:Name="Interface" Style="{DynamicResource InterfaceLayout}">
       <Grid.RowDefinitions>
         <RowDefinition Height="64"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="51*"/>
+        <RowDefinition Height="80"/>
+        <RowDefinition Height="64"/>
         <RowDefinition Height="838*"/>
         <RowDefinition Height="64"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="64"/>
         <ColumnDefinition Width="1*"/>
-        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="2*"/>
         <ColumnDefinition Width="1*"/>
         <ColumnDefinition Width="64"/>
       </Grid.ColumnDefinitions>
@@ -51,7 +51,7 @@
         <TextBlock x:Name="SubtitleText" Text="Configure your experience" TextWrapping="Wrap" FontSize="24"/>
       </Grid>
       
-      <StackPanel x:Name="SettingsStack" Grid.Row="3" Grid.Column="2" VerticalAlignment="Top" Margin="0,40,0,0">
+      <StackPanel x:Name="SettingsStack" Grid.Row="3" Grid.Column="2" VerticalAlignment="Top" Margin="10,40,10,0">
         
         <!-- Sound Toggle -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,30">
@@ -67,7 +67,7 @@
         </StackPanel>
         
         <!-- Back Button -->
-        <Button x:Name="BackButton" Content="BACK" Command="{Binding BackCommand}" Style="{StaticResource SciFiButtonStyle}"/>
+        <Button x:Name="BackButton" Content="BACK" Command="{Binding BackCommand}" Style="{DynamicResource SciFiButtonStyle}"/>
         
       </StackPanel>
     </Grid>

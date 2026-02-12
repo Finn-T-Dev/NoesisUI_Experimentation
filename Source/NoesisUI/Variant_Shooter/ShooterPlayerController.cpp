@@ -37,7 +37,7 @@ void AShooterPlayerController::BeginPlay()
 		}
 
 		// create the bullet counter widget and add it to the screen
-		BulletCounterUI = CreateWidget<UShooterBulletCounterUI>(this, BulletCounterUIClass);
+		//BulletCounterUI = CreateWidget<UShooterBulletCounterUI>(this, BulletCounterUIClass);
 
 		if (BulletCounterUI)
 		{
@@ -102,7 +102,7 @@ void AShooterPlayerController::OnPossess(APawn* InPawn)
 void AShooterPlayerController::OnPawnDestroyed(AActor* DestroyedActor)
 {
 	// reset the bullet counter HUD
-	BulletCounterUI->BP_UpdateBulletCounter(0, 0);
+	//BulletCounterUI->BP_UpdateBulletCounter(0, 0);
 
 	// find the player start
 	TArray<AActor*> ActorList;
@@ -126,17 +126,17 @@ void AShooterPlayerController::OnPawnDestroyed(AActor* DestroyedActor)
 
 void AShooterPlayerController::OnBulletCountUpdated(int32 MagazineSize, int32 Bullets)
 {
-	// update the UI
-	if (BulletCounterUI)
-	{
-		BulletCounterUI->BP_UpdateBulletCounter(MagazineSize, Bullets);
-	}
+	// update the UI (DEPRECATED)
+	//if (BulletCounterUI)
+	//{
+	//	BulletCounterUI->BP_UpdateBulletCounter(MagazineSize, Bullets);
+	//}
 }
 
 void AShooterPlayerController::OnPawnDamaged(float LifePercent)
 {
-	if (IsValid(BulletCounterUI))
-	{
-		BulletCounterUI->BP_Damaged(LifePercent);
-	}
+	//if (IsValid(BulletCounterUI))
+	//{
+	//	BulletCounterUI->BP_Damaged(LifePercent);
+	//}
 }

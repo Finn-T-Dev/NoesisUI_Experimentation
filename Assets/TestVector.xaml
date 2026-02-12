@@ -1,0 +1,24 @@
+<Page
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d"
+  d:DesignWidth="1920"
+  d:DesignHeight="1080"
+  Background="#FF4D5052">
+  <Grid x:Name="Master">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+      <StackPanel x:Name="Row1_StackPanel" Orientation="Horizontal" Margin="0,1,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button Template="{DynamicResource Button_Template_Cyber}" Content="Hello Choom!" Style="{DynamicResource Button_Style_Banana}"/>
+        <Button Template="{DynamicResource Button_Template_Cyber}" Content="Bigweld"/>
+        <Button Template="{DynamicResource Button_Template_Cyber}" Content="From robots" Style="{DynamicResource Button_Style_Apple}"/>
+      </StackPanel>
+      <StackPanel x:Name="Row2_StackPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button Content="Button" Template="{DynamicResource Button_Template_Jungle}" Style="{DynamicResource Button_Style_Banana}"/>
+        <Button Content="Button" Template="{DynamicResource Button_Template_Jungle}"/>
+        <Button Content="Button" Template="{DynamicResource Button_Template_Jungle}" Style="{DynamicResource Button_Style_Apple}"/>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
+</Page>

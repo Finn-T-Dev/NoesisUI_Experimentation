@@ -20,12 +20,12 @@ class NOESISUI_API AShooterGameMode : public AGameModeBase
 	
 protected:
 
-	/** Type of UI widget to spawn */
-	UPROPERTY(EditAnywhere, Category="Shooter")
-	TSubclassOf<UShooterUI> ShooterUIClass;
+	///** Type of UI widget to spawn */
+	//UPROPERTY(EditAnywhere, Category="Shooter")
+	//TSubclassOf<UShooterUI> ShooterUIClass;
 
-	/** Pointer to the UI widget */
-	TObjectPtr<UShooterUI> ShooterUI;
+	///** Pointer to the UI widget */
+	//TObjectPtr<UShooterUI> ShooterUI;
 
 	/** Map of scores by team ID */
 	TMap<uint8, int32> TeamScores;

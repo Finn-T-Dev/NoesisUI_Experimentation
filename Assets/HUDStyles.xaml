@@ -1,0 +1,21 @@
+<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:noesis="clr-namespace:NoesisGUIExtensions">
+<DataTemplate x:Key="EnemyTemplate">
+  <Border Width="20" Height="20" Background="Yellow">
+    <TextBlock Text="X" Foreground="Black"/>
+  </Border>
+</DataTemplate>
+
+<ItemsPanelTemplate x:Key="EnemyItemLayout">
+  <Canvas/>
+</ItemsPanelTemplate>
+<Style x:Key="HeadingStyle" TargetType="TextBlock">
+<Setter Property="FontSize" Value="56"/>
+<Setter Property="FontFamily" Value="Broadway"/>
+<Setter Property="Text" Value="Generic Shooter Template"/>
+<Setter Property="TextWrapping" Value="Wrap"/>
+<Setter Property="Name" Value="TitleText"/>
+<Setter Property="HorizontalAlignment" Value="Center"/>
+</Style>
+</ResourceDictionary>

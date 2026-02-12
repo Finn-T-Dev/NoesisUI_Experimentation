@@ -1,5 +1,11 @@
-<Project>
-  <Assembly>GAME</Assembly>
-  <DefaultDataNamespace>GAME</DefaultDataNamespace>
-  <StartupDocument>MainPage.xaml</StartupDocument>
+<Project Version="0.0.161">
+  <Assembly>
+    GAME
+  </Assembly>
+  <DefaultDataNamespace>
+    GAME
+  </DefaultDataNamespace>
+  <GlobalResources>
+    HUDStyles.xaml
+  </GlobalResources>
 </Project>

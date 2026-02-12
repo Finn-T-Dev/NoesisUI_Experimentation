@@ -18,7 +18,9 @@ public class NoesisUI : ModuleRules
 			"StateTreeModule",
 			"GameplayStateTreeModule",
 			"UMG",
-			"Slate"
+			"Slate",
+			"Noesis",
+			"NoesisRuntime"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
